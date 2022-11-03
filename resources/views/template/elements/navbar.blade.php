@@ -5,11 +5,13 @@
 <!-- ***** Logo End ***** -->
 <!-- ***** Menu Start ***** -->
 <ul class="nav">
-    <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-    <li class="scroll-to-section"><a href="#men">Men's</a></li>
-    <li class="scroll-to-section"><a href="#women">Women's</a></li>
-    <li class="scroll-to-section"><a href="#kids">Kid's</a></li>
-    <li class="submenu">
+    <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
+    <li class="scroll-to-section"><a href="#men">Hombres</a></li>
+    <li class="scroll-to-section"><a href="#women">Mujeres</a></li>
+    <li class="scroll-to-section"><a href="#kids">Niños</a></li>
+
+    {{-- Submenu --}}
+    {{-- <li class="submenu">
         <a href="javascript:;">Pages</a>
         <ul>
             <li><a href="about.html">About Us</a></li>
@@ -27,8 +29,14 @@
             <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template
                     Page 4</a></li>
         </ul>
-    </li>
-    <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+    </li> --}}
+
+    {{-- En caso de que no haya iniciado sesión --}}
+    <li><a href="#">Iniciar Sesión</a></li>
+    <li><a href="#">Registrarse</a></li>
+
+    {{-- Dashboard --}}
+    <li class="scroll-to-section"><a href="#">Tablero</a></li>
 </ul>
 <a class='menu-trigger'>
     <span>Menu</span>
