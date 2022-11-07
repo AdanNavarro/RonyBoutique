@@ -36,5 +36,7 @@ Route::view('/catalogo', 'public/catalogo');
 
 
 //Rutas de prueba
-Route::view('/prueba','private/dashboard');
+Route::view('/prueba','template/dashboard/layout');
+Route::view('/prueba2','private/dashboard');
+Route::view('/prueba3','private/usuarios');
 Route::view('/producto','public/producto');
