@@ -219,4 +219,53 @@
             padding: 50px 0px;
         }
     }
+
+    .nav-tabs {
+        border-bottom: 1px solid #000 !important;
+    }
+
+    .nav-tabs>.nav-item>.nav-link {
+        background-color: #000 !important;
+        color: #FFF !important;
+
+        transition: 0.3s;
+
+        outline: none !important;
+    }
+
+    .nav-tabs>.nav-item>.nav-link.active {
+        background-color: #FFF !important;
+        color: #000 !important;
+
+        border-color: #000 #000 #fff !important;
+
+        transition: 0.3s;
+    }
+
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #000;
+    }
+
+    .table td,
+    .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 0px solid #dee2e6;
+    }
+
+    .btn-outline-dark {
+        color: #000 !important;
+        border-color: #000 !important;
+    }
+
+    .btn-outline-dark:hover {
+        color: #FFF !important;
+        border-color: #000 !important;
+        background-color: #000;
+    }
+
+    .card{
+        border: 1px solid #000 !important;
+    }
 </style>
