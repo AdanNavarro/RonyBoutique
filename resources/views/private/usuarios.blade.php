@@ -52,11 +52,9 @@
                     Agregar Cliente
                 </a>
             </div>
-            <div class="collapse mt-3" id="form_clients">
+            <div class="{{-- collapse --}}  mt-3" id="form_clients">
                 <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when
-                    the user
-                    activates the relevant trigger.
+                    {{--  --}}
                 </div>
             </div>
         </div>
@@ -69,7 +67,7 @@
                     Agregar Empleado
                 </a>
             </div>
-            <div class="collapse mt-3" id="form_workers">
+            <div class="{{-- collapse --}} mt-3" id="form_workers">
                 <div class="card card-body">
                     Some placeholder content for the collapse component. This panel is hidden by default but revealed when
                     the user
@@ -86,11 +84,9 @@
                     Agregar Administrador
                 </a>
             </div>
-            <div class="collapse mt-3" id="form_admins">
+            <div class="{{-- collapse --}} mt-3" id="form_admins">
                 <div class="card card-body">
-                    Some placeholder content for the collapse component. This panel is hidden by default but revealed when
-                    the user
-                    activates the relevant trigger.
+                    @include('private/user/admins/create')
                 </div>
             </div>
         </div>
