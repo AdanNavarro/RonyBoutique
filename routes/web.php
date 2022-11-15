@@ -26,15 +26,6 @@ Route::view('/catalogo', 'public/catalogo');
 
 
 
-
-
-
-
-
-
-
-
-
 //Rutas de prueba
 Route::view('/prueba','template/dashboard/layout');
 Route::view('/prueba2','private/dashboard');
