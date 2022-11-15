@@ -17,12 +17,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('trademark_id')->constrained('trademarks')->cascadeOnUpdate();
             $table->foreignId('type_clothes_id')->constrained('type_clothes')->cascadeOnUpdate();
+            $table->string('type_costumer_clothe',30);
             $table->string('size',10);
             $table->string('description',50);
             $table->unsignedDecimal('price');
             $table->unsignedInteger('stock');
             $table->string('status');
-            $table->string('img',70);
+            $table->string('img',120);
             $table->timestamps();
         });
     }
