@@ -30,4 +30,5 @@ Route::view('/catalogo', 'public/catalogo');
 Route::view('/prueba','template/dashboard/layout');
 Route::view('/prueba2','private/dashboard');
 Route::view('/prueba3','private/usuarios');
+Route::view('/prueba4','private/boutique');
 Route::view('/producto','public/producto');

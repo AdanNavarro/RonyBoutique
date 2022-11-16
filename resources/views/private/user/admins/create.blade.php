@@ -1,4 +1,5 @@
 <form action="" method="post" class="needs-validation" novalidate>
+    @csrf
 
     <input type="hidden" name="id">
 
@@ -50,7 +51,7 @@
 
         <div class="col-md-6">
             <label for="number_phone" class="form-label">Número de Teléfono</label>
-            <input class="form-control" type="text" name="phone" placeholder="Phone..." pattern="[1-9]{1}[0-9]{9}"
+            <input class="form-control" type="text" name="number_phone" id="number_phone" placeholder="1234567890" pattern="[1-9]{1}[0-9]{9}"
                 required>
             <div class="invalid-feedback">
                 Ingrese un número de teléfono válido
@@ -62,7 +63,8 @@
 
     </div>
 
-    <button type="submit">Enviar</button>
+    <button class="btn btn-outline-dark mt-3 mr-3" type="submit">Guardar</button>
+    <button class="btn btn-outline-dark mt-3" type="reset">Limpiar</button>
 
 </form>
 

@@ -1,55 +1,55 @@
 @extends('template/dashboard/layout')
 
 @section('titulo_pestaña')
-    Rony Boutique - Usuarios
+    Rony Boutique - Boutique
 @endsection
 
-@section('usuarios')
+@section('boutique')
     active-nav
 @endsection
 
 @section('header')
-    Usuarios
+    Boutique
     &nbsp;
 @endsection
 
 @section('titulo')
-    Usuarios
+    Boutique
 @endsection
 
 @section('descripcion')
-    Desde aqui puedes ver, agregar, modificar o dar de baja a los usuarios disponibles.
+    Desde aqui podras agregar nuevos productos, ver existencias, editar productos y mucho mas.
 @endsection
 
 @section('contenido')
     <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
 
-        {{-- Para la vista empleado --}}
+        {{-- Para ambas vistas --}}
 
         <li class="nav-item mx-2" role="presentation">
-            <button class="nav-link active" id="cliente-tab" data-bs-toggle="tab" data-bs-target="#cliente" type="button"
-                role="tab" aria-controls="cliente" aria-selected="true">Clientes</button>
-        </li>
-        <li class="nav-item mx-2" role="presentation">
-            <button class="nav-link " id="empleados-tab" data-bs-toggle="tab" data-bs-target="#empleados" type="button"
-                role="tab" aria-controls="empleados" aria-selected="false">Empleados</button>
+            <button class="nav-link active" id="producto-tab" data-bs-toggle="tab" data-bs-target="#producto" type="button"
+                role="tab" aria-controls="producto" aria-selected="true">Productos</button>
         </li>
 
-        {{-- Unicamente para la vista de administrador --}}
         <li class="nav-item mx-2" role="presentation">
-            <button class="nav-link " id="administradores-tab" data-bs-toggle="tab" data-bs-target="#administradores"
-                type="button" role="tab" aria-controls="administradores" aria-selected="false">Administradores</button>
+            <button class="nav-link " id="marca-tab" data-bs-toggle="tab" data-bs-target="#marca" type="button"
+                role="tab" aria-controls="marca" aria-selected="false">Marcas</button>
+        </li>
+        
+        <li class="nav-item mx-2" role="presentation">
+            <button class="nav-link " id="tipoproducto-tab" data-bs-toggle="tab" data-bs-target="#tipoproducto"
+                type="button" role="tab" aria-controls="tipoproducto" aria-selected="false">Tipo de productos</button>
         </li>
     </ul>
 
     <div class="tab-content mt-5" style="margin-bottom: 3rem !important;" id="myTabContent">
-        <div class="tab-pane fade show active" id="cliente" role="tabpanel" aria-labelledby="cliente-tab">
-            @include('private/user/clients/data')
+        <div class="tab-pane fade show active" id="producto" role="tabpanel" aria-labelledby="producto-tab">
+            @include('private/boutique/clothes/data')
 
             <div class="text-center">
                 <a class="btn btn-outline-dark my-2 mx-auto" data-bs-toggle="collapse" href="#form_clients" role="button"
                     aria-expanded="false" aria-controls="form_clients">
-                    Agregar Cliente
+                    Agregar Producto
                 </a>
             </div>
             <div class="collapse  mt-3" id="form_clients">
@@ -58,13 +58,14 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="empleados" role="tabpanel" aria-labelledby="empleados-tab">
-            @include('private/user/workers/data')
+
+        <div class="tab-pane fade" id="marca" role="tabpanel" aria-labelledby="marca-tab">
+            @include('private/boutique/trademarks/data')
 
             <div class="text-center">
                 <a class="btn btn-outline-dark my-2 mx-auto" data-bs-toggle="collapse" href="#form_workers" role="button"
                     aria-expanded="false" aria-controls="form_workers">
-                    Agregar Empleado
+                    Agregar Marca
                 </a>
             </div>
             <div class="collapse mt-3" id="form_workers">
@@ -73,13 +74,14 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="administradores" role="tabpanel" aria-labelledby="administradores-tab">
-            @include('private/user/admins/data')
+
+        <div class="tab-pane fade" id="tipoproducto" role="tabpanel" aria-labelledby="tipoproducto-tab">
+            @include('private/boutique/type_clothes/data')
 
             <div class="text-center">
                 <a class="btn btn-outline-dark my-2 mx-auto" data-bs-toggle="collapse" href="#form_admins" role="button"
                     aria-expanded="false" aria-controls="form_admins">
-                    Agregar Administrador
+                    Agregar Tipo
                 </a>
             </div>
             <div class="collapse mt-3" id="form_admins">
