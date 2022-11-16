@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('description',50);
             $table->unsignedDecimal('price');
             $table->unsignedInteger('stock');
-            $table->string('status');
+            $table->string('status')->default('active');
             $table->string('img',120);
             $table->timestamps();
         });
