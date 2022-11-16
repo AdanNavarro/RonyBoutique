@@ -35,7 +35,13 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //url
+        /*
+
+
+
+
+        */
     }
 
     /**
@@ -82,4 +88,6 @@ class ClientController extends Controller
     {
         //
     }
+
+
 }
