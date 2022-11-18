@@ -5,7 +5,7 @@
                 #
             </th>
             <th>
-                Tipo de Producto {{-- type --}}
+                Nombre de la categoría {{-- type --}}
             </th>
             <th>
                 Descripción del producto {{-- description --}}

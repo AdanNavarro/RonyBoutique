@@ -1,12 +1,13 @@
 <form action="" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
     @csrf
+    @method('PUT')
 
-    <input type="hidden" name="id">
+    <input type="hidden" name="id" value="">
 
     <div class="row g-3 mb-3">
         <div class="col-md-4">
             <label for="trademark_id" class="form-label">Marca</label>
-            <input class="form-control" type="text" name="trademark_id" id="trademark_id" required>
+            <input class="form-control" type="text" name="trademark_id" id="trademark_id" required value="">
             {{-- Esto sería un select --}}
             <div class="invalid-feedback">
                 Elije una Marca
@@ -18,7 +19,8 @@
 
         <div class="col-md-4">
             <label for="type_clothes_id" class="form-label">Tipo de Producto</label>
-            <input class="form-control" type="text" name="type_clothes_id" id="type_clothes_id" required>
+            <input class="form-control" type="text" name="type_clothes_id" id="type_clothes_id" required
+                value="">
             {{-- Esto sería un select --}}
             <div class="invalid-feedback">
                 Elije un tipo de producto
@@ -29,8 +31,8 @@
         </div>
 
         <div class="col-md-4">
-            <label for="type_costumer_clothe" class="form-label">Categoria</label>
-            <select class="form-select" name="type_costumer_clothe" id="type_costumer_clothe" required>
+            <label for="type_costumer_clothe" class="form-label">Hecho para</label>
+            <select class="form-select" name="type_costumer_clothe" id="type_costumer_clothe" required value="">
                 <option value="" disabled selected>Elije una opción</option>
                 <option value="Hombre">Hombre</option>
                 <option value="Mujer">Mujer</option>
@@ -48,11 +50,11 @@
     </div>
 
     <div class="row g-3 mb-3">
-        
+
         <div class="col-md-5">
             <label for="name" class="form-label">Nombre del Producto</label>
             <input class="form-control" type="text" name="name" id="name"
-                placeholder="Titulo épico para tu producto..." maxlength="60" required>
+                placeholder="Titulo épico para tu producto..." maxlength="60" required value="">
             <div class="invalid-feedback">
                 Escriba un Nombre adecuado
             </div>
@@ -60,7 +62,7 @@
                 Nombre de producto válido
             </div>
         </div>
-        
+
         <div class="col-md-5">
             <label for="img" class="form-label">Imagen del Producto</label>
             <input class="form-control" type="file" name="img" id="img" required>
@@ -76,13 +78,8 @@
             <label for="price" class="form-label">Precio</label>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">$</span>
-                <input type="text" class="form-control" name="price" id="price" placeholder="00.00" required>
-                <div class="invalid-feedback">
-                    Indique el precio
-                </div>
-                <div class="valid-feedback">
-                    Precio válido
-                </div>
+                <input type="text" class="form-control" name="price" id="price" placeholder="150.99"
+                    value="">
             </div>
         </div>
     </div>
@@ -186,7 +183,7 @@
     <div class="row g-3 mb-3">
         <div class="col-md-12">
             <label for="description" class="form-label">Descripción del producto</label>
-            <textarea class="form-control" name="description" id="description" cols="30" rows="3" maxlength="" placeholder="Especificaciones del producto o una descripción detallada de lo que es..." required></textarea>
+            <textarea name="description" id="description" cols="30" rows="10" required>{{-- value --}}</textarea>
             <div class="invalid-feedback">
                 Ingrese una descripción válida
             </div>

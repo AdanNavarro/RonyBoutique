@@ -11,7 +11,7 @@
                 Tipo de producto {{-- type_clothes_id -> type --}}
             </th>
             <th>
-                Producto para {{-- type_costumer_clothe --}}
+                Categoría {{-- type_costumer_clothe --}}
             </th>
             <th>
                 Nombre {{-- name --}}

@@ -279,7 +279,7 @@
         border: 1px solid #000 !important;
     }
 
-    .form-control:focus {
+    .form-control:focus, .form-select:focus {
         border-color: #000 !important;
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)/*, 0 0 8px rgba(0, 0, 0, 0.308)*/ !important;
     }

@@ -38,7 +38,7 @@
         
         <li class="nav-item mx-2" role="presentation">
             <button class="nav-link " id="tipoproducto-tab" data-bs-toggle="tab" data-bs-target="#tipoproducto"
-                type="button" role="tab" aria-controls="tipoproducto" aria-selected="false">Tipo de productos</button>
+                type="button" role="tab" aria-controls="tipoproducto" aria-selected="false">Categorías</button>
         </li>
     </ul>
 
@@ -70,7 +70,7 @@
             </div>
             <div class="collapse mt-3" id="form_workers">
                 <div class="card card-body">
-                    @include('private/user/workers/create')
+                    @include('private/boutique/trademarks/create')
                 </div>
             </div>
         </div>
@@ -81,12 +81,12 @@
             <div class="text-center">
                 <a class="btn btn-outline-dark my-2 mx-auto" data-bs-toggle="collapse" href="#form_admins" role="button"
                     aria-expanded="false" aria-controls="form_admins">
-                    Agregar Tipo
+                    Agregar Categoría
                 </a>
             </div>
             <div class="collapse mt-3" id="form_admins">
                 <div class="card card-body">
-                    @include('private/user/admins/create')
+                    @include('private/boutique/type_clothes/create')
                 </div>
             </div>
         </div>

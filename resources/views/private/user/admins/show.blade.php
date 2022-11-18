@@ -64,7 +64,7 @@
 
     </div>
 
-    <button class="btn btn-outline-dark mt-3 mr-3" type="submit">Guardar</button>
+    <button class="btn btn-outline-dark mt-3 mr-3" type="submit">Dar de Baja</button>
     <button class="btn btn-outline-dark mt-3" type="reset">Limpiar</button>
 
 </form>
