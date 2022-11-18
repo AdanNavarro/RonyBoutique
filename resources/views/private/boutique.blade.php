@@ -54,7 +54,7 @@
             </div>
             <div class="collapse  mt-3" id="form_clients">
                 <div class="card card-body">
-                    @include('private/user/clients/create')
+                    @include('private/boutique/clothes/create')
                 </div>
             </div>
         </div>

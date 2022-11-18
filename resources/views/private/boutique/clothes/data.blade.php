@@ -8,7 +8,10 @@
                 Marca {{-- trademark_id -> name --}}
             </th>
             <th>
-                Tipo {{-- type_clothes_id -> type --}}
+                Tipo de producto {{-- type_clothes_id -> type --}}
+            </th>
+            <th>
+                Producto para {{-- type_costumer_clothe --}}
             </th>
             <th>
                 Nombre {{-- name --}}
@@ -39,7 +42,10 @@
                     Marca {{-- trademark_id -> name --}}
                 </td>
                 <td>
-                    Tipo {{-- type_clothes_id -> type --}}
+                    Tipo de producto {{-- type_clothes_id -> type --}}
+                </td>
+                <td>
+                    Producto para {{-- type_costumer_clothe --}}
                 </td>
                 <td>
                     Nombre {{-- name --}}
@@ -71,7 +77,10 @@
                     Marca {{-- trademark_id -> name --}}
                 </td>
                 <td>
-                    Tipo {{-- type_clothes_id -> type --}}
+                    Tipo de producto {{-- type_clothes_id -> type --}}
+                </td>
+                <td>
+                    Producto para {{-- type_costumer_clothe --}}
                 </td>
                 <td>
                     Nombre {{-- name --}}
@@ -103,7 +112,10 @@
                     Marca {{-- trademark_id -> name --}}
                 </td>
                 <td>
-                    Tipo {{-- type_clothes_id -> type --}}
+                    Tipo de producto {{-- type_clothes_id -> type --}}
+                </td>
+                <td>
+                    Producto para {{-- type_costumer_clothe --}}
                 </td>
                 <td>
                     Nombre {{-- name --}}
