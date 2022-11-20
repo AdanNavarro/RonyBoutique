@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Clothe;
+use App\Models\Clothes;
 
 
 class ClotheSeeder extends Seeder
@@ -15,48 +15,48 @@ class ClotheSeeder extends Seeder
      */
     public function run()
     {
-        $registro1 = new Clothe();
+        $registro1 = new Clothes();
 
         $registro1->trademark_id = 1;
         $registro1->type_clothes_id = 1;
         $registro1->type_costumer_clothe = 1;
-        $registro1->name = "Camisa Roja Marca C&A";
+        $registro1->name = "Pantalon Negro";
         $registro1->size = "XL";
-        $registro1->description = "Camisa roja deportiva para hacer ejercicio";
+        $registro1->description = "Pantalon negro";
         $registro1->price = 99.99;
         $registro1->stock = 5;
         $registro1->img = "https://images-na.ssl-images-amazon.com/images/I/51r%2BtJ3RiPL._UX385_.jpg";
         $registro1->save();
 
-        $registro2 = new Clothe();
+        $registro2 = new Clothes();
 
         $registro2->trademark_id = 1;
         $registro2->type_clothes_id = 1;
         $registro2->type_costumer_clothe = 1;
-        $registro2->name = "Camisa Roja Marca C&A";
+        $registro2->name = "Pans gris";
         $registro2->size = "L";
-        $registro2->description = "Camisa roja deportiva para hacer ejercicio";
+        $registro2->description = "Pans gris";
         $registro2->price = 99.99;
         $registro2->stock = 6;
         $registro2->img = "https://images-na.ssl-images-amazon.com/images/I/51r%2BtJ3RiPL._UX385_.jpg";
         $registro2->save();
 
 
-        $registro3 = new Clothe();
+        $registro3 = new Clothes();
 
         $registro3->trademark_id = 1;
         $registro3->type_clothes_id = 1;
         $registro3->type_costumer_clothe = 1;
-        $registro3->name = "Camisa Roja Marca C&A";
+        $registro3->name = "Sudadera Roja";
         $registro3->size = "M";
-        $registro3->description = "Camisa roja deportiva para hacer ejercicio";
+        $registro3->description = "Sudadera roj";
         $registro3->price = 99.99;
         $registro3->stock = 2;
         $registro3->img = "https://images-na.ssl-images-amazon.com/images/I/51r%2BtJ3RiPL._UX385_.jpg";
         $registro3->save();
 
 
-        $registro4 = new Clothe();
+        $registro4 = new Clothes();
 
         $registro4->trademark_id = 2;
         $registro4->type_clothes_id = 2;

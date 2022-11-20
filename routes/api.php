@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClotheController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+
+// ============ ROUTES FROM Clothes ===============
+
+Route::resource('/Clothes',ClotheController::class); //All Collection
+
+Route::post('/Clothes' , [ClotheController::class, 'store']); //Resgistrer Product
+
+Route::get('/Clothes/{id}',[ClotheController::class, 'show']); //Show By Id
+
+Route::put('/Clothes/{id}',[ClotheController::class, 'update']); //Update A Registrer
+
+Route::delete('/Clothes/{id}', [ClotheController::class, 'destroy']); //Delete A Registrer
+
+Route::get('/GetClothes/{nClothes}', [ClotheController::class, 'Get_n']);// Get a number of registrers
+
+Route::get('/Clothe/{Name_P}', [ClotheController::class, 'Search_Name']);// Search for name
+
+
+// ============ END ROUTES FROM Clothes ===============
