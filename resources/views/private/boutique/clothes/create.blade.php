@@ -92,8 +92,8 @@
             <label for="size" class="form-label">Tamaños y Cantidad</label>
 
             <div class="input-group mb-3">
-                <select class="form-select" name="size1" id="size1" required>
-                    <option value="" disabled selected>Elije una opción</option>
+                <select class="form-select" id="talla1" name="size1" id="size1" required>
+                    <option value=""  selected></option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
@@ -104,9 +104,9 @@
                     class="form-control" required>
             </div>
 
-            <div class="input-group mb-3" id="talla1" style="display: none">
+            <div class="input-group mb-3" id="talla2" style="display: none">
                 <select class="form-select" name="size2" id="size2">
-                    <option value="" disabled selected>Elije una opción</option>
+                    <option value=""  selected></option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
@@ -117,9 +117,9 @@
                     class="form-control" min="1">
             </div>
 
-            <div class="input-group mb-3" id="talla2" style="display: none">
+            <div class="input-group mb-3" id="talla3" style="display: none">
                 <select class="form-select" name="size3" id="size3">
-                    <option value="" disabled selected>Elije una opción</option>
+                    <option value=""  selected></option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
@@ -130,9 +130,9 @@
                     class="form-control" min="1">
             </div>
 
-            <div class="input-group mb-3" id="talla3" style="display: none">
+            <div class="input-group mb-3" id="talla4" style="display: none">
                 <select class="form-select" name="size4" id="size4">
-                    <option value="" disabled selected>Elije una opción</option>
+                    <option value=""  selected></option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
@@ -143,9 +143,9 @@
                     class="form-control" min="1">
             </div>
 
-            <div class="input-group mb-3" id="talla4" style="display: none">
+            <div class="input-group mb-3" id="talla5" style="display: none">
                 <select class="form-select" name="size5" id="size5">
-                    <option value="" disabled selected>Elije una opción</option>
+                    <option value=""  selected></option>
                     <option value="S">S</option>
                     <option value="M">M</option>
                     <option value="L">L</option>
@@ -203,18 +203,11 @@
 </form>
 
 <script>
-    var AgregarTalla = 1;
+    var AgregarTalla = 2;
 
     function AgregarTallaF() {
 
         switch (AgregarTalla) {
-            case 1:
-
-                $("#talla1").show();
-
-                AgregarTalla = AgregarTalla + 1;
-
-                break;
             case 2:
 
                 $("#talla2").show();
@@ -232,6 +225,13 @@
             case 4:
 
                 $("#talla4").show();
+
+                AgregarTalla = AgregarTalla + 1;
+
+                break;
+            case 5:
+
+                $("#talla5").show();
 
                 AgregarTalla = AgregarTalla + 1;
 

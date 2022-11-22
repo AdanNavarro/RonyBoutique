@@ -45,7 +45,13 @@
         padding: 0 1rem;
         font-family: var(--body-font);
         font-size: var(--normal-font-size);
-        transition: .5s
+        transition: .5s;
+
+        background-image: url( '{{ asset('assets/images/FondoDashboard.png') }}' );
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     a {
@@ -279,8 +285,20 @@
         border: 1px solid #000 !important;
     }
 
-    .form-control:focus, .form-select:focus {
+    .form-control:focus,
+    .form-select:focus {
         border-color: #000 !important;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)/*, 0 0 8px rgba(0, 0, 0, 0.308)*/ !important;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+            /*, 0 0 8px rgba(0, 0, 0, 0.308)*/
+             !important;
+    }
+
+    .btn-dark {
+        background-color: #000 !important;
+    }
+
+    .card-header {
+        background-color: #1f1f1f;
+        color: #FFF;
     }
 </style>

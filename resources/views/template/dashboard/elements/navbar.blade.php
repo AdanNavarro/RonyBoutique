@@ -1,22 +1,22 @@
 <div class="l-navbar" id="nav-bar">
     <nav class="nav-main">
         <div>
-            <a href="#" class="nav_logo">
+            <a href="{{ route('tablero.dashboard') }}" class="nav_logo">
                 {{-- <i class='bx bx-layer nav_logo-icon'></i> --}}
-                <img src="assets/images/Resources Logo/Logo1.png" alt="" width="20px">
+                <img src="{{ asset('assets/images/Resources Logo/Logo1.png') }}" alt="" width="20px" height="21px">
                 <span class="nav_logo-name">Rony Boutique</span>
             </a>
 
             <div class="nav_list">
-                <a href="#" class="nav_link @yield("usuarios")">
+                <a href="{{ route('tablero.usuarios') }}" class="nav_link @yield("usuarios")">
                     <i class='bx bx-user nav_icon'></i>
                     <span class="nav_name">Usuarios</span>
                 </a>
-                <a href="#" class="nav_link @yield("boutique")">
+                <a href="{{ route('tablero.boutique') }}" class="nav_link @yield("boutique")">
                     <i class='bx bxs-t-shirt nav_icon'></i>
                     <span class="nav_name">Boutique</span>
                 </a>
-                <a href="#" class="nav_link @yield("ventas")">
+                <a href="{{ route('tablero.sales') }}" class="nav_link @yield("ventas")">
                     <i class='bx bx-money-withdraw nav_icon'></i>
                     <span class="nav_name">Ventas</span>
                 </a>
