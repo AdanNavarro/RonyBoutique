@@ -1,6 +1,6 @@
 <!-- ***** Logo Start ***** -->
 <a href="index.html" class="logo">
-    <img src="{{ asset('assets/images/logo.png') }}">
+    <img src="{{ asset('assets/images/Resources Logo/LogoHorizontal.png') }}">
 </a>
 <!-- ***** Logo End ***** -->
 <!-- ***** Menu Start ***** -->
@@ -37,6 +37,11 @@
 
     {{-- Dashboard --}}
     <li class="scroll-to-section"><a href="#">Tablero</a></li>
+
+    {{-- Cuando haya iniciado sesión --}}
+
+    <li><a href="#">Carrito (0)</a></li>
+    
 </ul>
 <a class='menu-trigger'>
     <span>Menu</span>

@@ -105,7 +105,7 @@ ul {
 p {
   font-size: 14px;
   line-height: 25px;
-  color: #2a2a2a;
+  color: #000;
 }
 
 /* 
@@ -120,12 +120,12 @@ body {
 }
 
 ::selection {
-  background: #2a2a2a;
+  background: #000;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #2a2a2a;
+  background: #000;
   color: #fff;
 }
 
@@ -157,12 +157,12 @@ body {
 
 .main-border-button a:hover {
   background-color: #fff;
-  color: #2a2a2a;
+  color: #000;
 }
 
 .main-white-button a {
   font-size: 13px;
-  color: #2a2a2a;
+  color: #000;
   background-color: #fff;
   padding: 12px 25px;
   display: inline-block;
@@ -189,7 +189,7 @@ body {
 .section-heading h2 {
   font-size: 34px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #000;
 }
 
 .section-heading span {
@@ -206,6 +206,13 @@ body {
 header
 --------------------------------------------- 
 */
+
+.logo > img{
+    height: 75px !important;
+    padding-bottom: 10px !important;
+
+    /* margin: 15px 0; */
+}
 
 .background-header {
   border-bottom: none !important;
@@ -224,11 +231,11 @@ header
 }
 
 .background-header .main-nav .nav li:hover a {
-  color: #2a2a2a!important;
+  color: #000!important;
 }
 
 .background-header .nav li a.active {
-  color: #2a2a2a!important;
+  color: #000!important;
 }
 
 .header-area {
@@ -300,7 +307,7 @@ header
   display: block;
   font-weight: 600;
   font-size: 15px;
-  color: #2a2a2a;
+  color: #000;
   text-transform: capitalize;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -313,7 +320,7 @@ header
 }
 
 .header-area .main-nav .nav li a {
-  color: #2a2a2a;
+  color: #000;
 }
 
 .header-area .main-nav .nav li:hover a,
@@ -336,14 +343,14 @@ header
   font-family: FontAwesome;
   content: "\f107";
   font-size: 12px;
-  color: #2a2a2a;
+  color: #000;
   position: absolute;
   right: 18px;
   top: 12px;
 }
 
 .background-header .main-nav .nav li.submenu:after {
-  color: #2a2a2a;
+  color: #000;
 }
 
 .header-area .main-nav .nav li.submenu ul {
@@ -369,7 +376,7 @@ header
   opacity: 1;
   display: block;
   background: #f7f7f7;
-  color: #2a2a2a!important;
+  color: #000!important;
   padding-left: 20px;
   height: 40px;
   line-height: 40px;
@@ -727,7 +734,7 @@ banner
   left: 15px;
   bottom: 15px;
   text-align: center;
-  background-color: rgba(42,42,42,.97);
+  background-color: rgba(0, 0, 0, 0.849);
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
@@ -786,7 +793,7 @@ Men
 
 #men .item .down-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -841,7 +848,7 @@ Men
   text-align: center;
   line-height: 50px;
   display: inline-block;
-  color: #2a2a2a;
+  color: #000;
   background-color: #fff;
 }
 
@@ -872,7 +879,7 @@ Men
 #men .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #000;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
@@ -880,7 +887,7 @@ Men
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #000;
 }
 
 #men .owl-nav .owl-prev {
@@ -910,7 +917,7 @@ Men
 #men .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #000;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
@@ -918,7 +925,7 @@ Men
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #000;
 }
 
 
@@ -947,7 +954,7 @@ Women
 
 #women .item .down-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -1002,7 +1009,7 @@ Women
   text-align: center;
   line-height: 50px;
   display: inline-block;
-  color: #2a2a2a;
+  color: #000;
   background-color: #fff;
 }
 
@@ -1033,7 +1040,7 @@ Women
 #women .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #000;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
@@ -1041,7 +1048,7 @@ Women
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #000;
 }
 
 #women .owl-nav .owl-prev {
@@ -1071,7 +1078,7 @@ Women
 #women .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #000;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
@@ -1079,7 +1086,7 @@ Women
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #000;
 }
 
 /*
@@ -1107,7 +1114,7 @@ Kids
 
 #kids .item .down-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -1162,7 +1169,7 @@ Kids
   text-align: center;
   line-height: 50px;
   display: inline-block;
-  color: #2a2a2a;
+  color: #000;
   background-color: #fff;
 }
 
@@ -1193,7 +1200,7 @@ Kids
 #kids .owl-nav .owl-prev:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #000;
   font-size: 25px;
   font-weight: 700;
   content: '\f104';
@@ -1201,7 +1208,7 @@ Kids
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #000;
 }
 
 #kids .owl-nav .owl-prev {
@@ -1231,7 +1238,7 @@ Kids
 #kids .owl-nav .owl-next:before {
   display: inline-block;
   font-family: 'FontAwesome';
-  color: #2a2a2a;
+  color: #000;
   font-size: 25px;
   font-weight: 700;
   content: '\f105';
@@ -1239,7 +1246,7 @@ Kids
   height: 50px;
   background-color: transparent;
   line-height: 48px;
-  border :1px solid #2a2a2a;
+  border :1px solid #000;
 }
 
 
@@ -1262,7 +1269,7 @@ Explore
 #explore .left-content h2 {
   font-size: 34px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #000;
 }
 
 #explore .left-content span {
@@ -1286,7 +1293,7 @@ Explore
 
 #explore .left-content .quote p {
   font-style: italic;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 500;
 }
 
@@ -1299,13 +1306,13 @@ Explore
 }
 
 #explore .left-content .main-border-button a {
-  color: #2a2a2a;
-  border-color: #2a2a2a;
+  color: #000;
+  border-color: #000;
   margin-top: 35px;
 }
 
 #explore .left-content .main-border-button a:hover {
-  background-color: #2a2a2a;
+  background-color: #000;
   color: #fff;
 }
 
@@ -1334,7 +1341,7 @@ Explore
 #explore .types h4 {
   font-size: 24px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #000;
   padding-top: 90px;
   margin-bottom: 5px;
 }
@@ -1447,7 +1454,7 @@ Subscribe
 }
 
 .subscribe form input::focus {
-  border-color: #2a2a2a;
+  border-color: #000;
   border-radius: 0px;
 }
 
@@ -1457,7 +1464,7 @@ Subscribe
   display: inline-block;
   text-align: center;
   line-height: 44px;
-  background-color: #2a2a2a;
+  background-color: #000;
   box-shadow: none;
   border: 1px solid transparent;
   color: #fff;
@@ -1466,8 +1473,8 @@ Subscribe
 
 .subscribe form button:hover {
   background-color: #fff;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  border: 1px solid #000;
+  color: #000;
 }
 
 .subscribe ul li {
@@ -1478,7 +1485,7 @@ Subscribe
 .subscribe ul li {
   font-size: 16px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #000;
 }
 
 .subscribe ul li span,
@@ -1489,7 +1496,7 @@ Subscribe
 }
 
 .subscribe ul li span a:hover {
-  color: #2a2a2a;
+  color: #000;
 }
 
 
@@ -1502,7 +1509,7 @@ footer
 footer {
   margin-top: 60px;
   padding: 60px 0px 30px 0px;
-  background-color: #2a2a2a;
+  background-color: #000;
 }
 
 footer .logo {
@@ -1625,7 +1632,7 @@ Products Page
 
 #products .item .down-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -1680,7 +1687,7 @@ Products Page
   text-align: center;
   line-height: 50px;
   display: inline-block;
-  color: #2a2a2a;
+  color: #000;
   background-color: #fff;
 }
 
@@ -1702,18 +1709,18 @@ Products Page
 #products .pagination ul li a {
   width: 44px;
   height: 44px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid #000;
   display: inline-block;
   text-align: center;
   line-height: 44px;
   font-size: 14px;
   font-weight: 500;
-  color: #2a2a2a;
+  color: #000;
 }
 
 #products .pagination ul li a:hover,
 #products .pagination ul li.active a {
-  background-color: #2a2a2a;
+  background-color: #000;
   color: #fff;
 }
 
@@ -1743,7 +1750,7 @@ Single Product Page
 
 #product .right-content h4 {
   font-size: 22px;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 700;
   margin-bottom: 0px;
 }
@@ -1790,7 +1797,7 @@ Single Product Page
 
 #product .right-content .quote p {
   font-style: italic;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 500;
 }
 
@@ -1842,13 +1849,13 @@ Single Product Page
 }
 
 .total .main-border-button a {
-  border-color: #2a2a2a;
-  color: #2a2a2a;
+  border-color: #000;
+  color: #000;
 }
 
 .total .main-border-button a:hover {
   color: #fff;
-  background-color: #2a2a2a;
+  background-color: #000;
 }
 
 .quantity {
@@ -1937,7 +1944,7 @@ About Us Page
 .about-us .right-content h4 {
   font-size: 34px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #000;
 }
 
 .about-us .right-content span {
@@ -1961,7 +1968,7 @@ About Us Page
 
 .about-us .right-content .quote p {
   font-style: italic;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 500;
 }
 
@@ -1987,7 +1994,7 @@ About Us Page
 .about-us .right-content ul li a {
   width: 44px;
   height: 44px;
-  background-color: #2a2a2a;
+  background-color: #000;
   color: #fff;
   display: inline-block;
   text-align: center;
@@ -1998,7 +2005,7 @@ About Us Page
 
 .about-us .right-content ul li a:hover {
   background-color: #eee;
-  color: #2a2a2a;
+  color: #000;
 }
 
 .our-team {
@@ -2060,7 +2067,7 @@ About Us Page
   width: 44px;
   height: 44px;
   background-color: #fff;
-  color: #2a2a2a;
+  color: #000;
   display: inline-block;
   text-align: center;
   line-height: 44px;
@@ -2069,7 +2076,7 @@ About Us Page
 }
 
 .our-team .team-item .thumb .hover-effect .inner-content ul li a:hover {
-  background-color: #2a2a2a;
+  background-color: #000;
   color: #fff;
 }
 
@@ -2080,7 +2087,7 @@ About Us Page
 
 .our-team .team-item .down-content h4 {
   font-size: 24px;
-  color: #2a2a2a;
+  color: #000;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -2123,7 +2130,7 @@ About Us Page
 .our-services .service-item h4 {
   font-size: 24px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #000;
   margin-bottom: 20px;
 }
 
@@ -2168,7 +2175,7 @@ contact Us Page
 }
 
 .contact-us form input::focus {
-  border-color: #2a2a2a;
+  border-color: #000;
   border-radius: 0px;
 }
 
@@ -2191,7 +2198,7 @@ contact Us Page
 }
 
 .contact-us form textarea::focus {
-  border-color: #2a2a2a;
+  border-color: #000;
   border-radius: 0px;
 }
 
@@ -2201,7 +2208,7 @@ contact Us Page
   display: inline-block;
   text-align: center;
   line-height: 44px;
-  background-color: #2a2a2a;
+  background-color: #000;
   box-shadow: none;
   border: 1px solid transparent;
   color: #fff;
@@ -2210,8 +2217,8 @@ contact Us Page
 
 .contact-us form button:hover {
   background-color: #fff;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  border: 1px solid #000;
+  color: #000;
 }
 
 
@@ -2296,12 +2303,12 @@ responsive
 }
 
 
-
+/* Aqui cambie todos los colores a negro absoluto, cambiar a 2a2a2a2 en caso de equivocarme */
 
 
 #preloader {
   overflow: hidden;
-  background-color: #2a2a2a;
+  background-color: #000;
   left: 0;
   right: 0;
   top: 0;
