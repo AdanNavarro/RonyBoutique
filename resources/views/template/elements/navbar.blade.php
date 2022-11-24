@@ -32,11 +32,11 @@
     </li> --}}
 
     {{-- En caso de que no haya iniciado sesión --}}
-    <li><a href="#">Iniciar Sesión</a></li>
-    <li><a href="#">Registrarse</a></li>
+    {{-- <li><a href="#">Iniciar Sesión</a></li>
+    <li><a href="#">Registrarse</a></li> --}}
 
     {{-- Dashboard --}}
-    <li class="scroll-to-section"><a href="#">Tablero</a></li>
+    {{-- <li class="scroll-to-section"><a href="#">Tablero</a></li> --}}
 
     {{-- Cuando haya iniciado sesión --}}
 

@@ -1566,11 +1566,13 @@ footer .under-footer p {
 }
 
 footer .under-footer a {
-  color: #cff;
+  color: #ffffff;
 }
 
 footer .under-footer a:hover {
-  color: #c66;
+  color: #000000;
+
+  -webkit-text-stroke: 1px #ffffff;
 }
 
 

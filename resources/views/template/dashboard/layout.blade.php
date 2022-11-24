@@ -16,6 +16,8 @@
     @include('template/dashboard/elements/navbar')
 
     <!--Container Main start-->
+    <br><br>
+
     <div class="height-100 ">
         <h2>@yield('titulo')</h2>
         <p>@yield('descripcion')</p>

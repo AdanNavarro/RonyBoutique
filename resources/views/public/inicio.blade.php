@@ -12,10 +12,11 @@
                     <div class="left-content">
                         <div class="thumb">
                             <div class="inner-content">
-                                <h4>We Are Hexashop</h4>
-                                <span>Awesome, clean &amp; creative HTML5 Template</span>
+                                <h4>Nosotros somos <br> Rony Boutique
+                                </h4>
+                                <span>La mejor tienda de ropa que encontraras en Guadalajara</span>
                                 <div class="main-border-button">
-                                    <a href="#">Purchase Now!</a>
+                                    <a href="#">¡Comprar ahora!</a>
                                 </div>
                             </div>
                             <img src="{{ asset('assets/images/left-banner-image.jpg') }}">
@@ -29,16 +30,16 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <h4>Women</h4>
-                                            <span>Best Clothes For Women</span>
+                                            <h4>Mujeres</h4>
+                                            <span>La mejor ropa para mujer</span>
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <h4>Women</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                <h4>Mujeres</h4>
+                                                <p>Aquí encontraras la mejor ropa y los mejores accesorios para mujeres
                                                 </p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="#">Descubrir más</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -50,16 +51,16 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <h4>Men</h4>
-                                            <span>Best Clothes For Men</span>
+                                            <h4>Hombres</h4>
+                                            <span>La mejor ropa para hombre </span>
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <h4>Men</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                <h4>Hombres</h4>
+                                                <p>Aquí encontraras la mejor ropa y los mejores accesorios para Hombres
                                                 </p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="#">Descubrir más</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,16 +72,16 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <h4>Kids</h4>
-                                            <span>Best Clothes For Kids</span>
+                                            <h4>Niños</h4>
+                                            <span>La mejor ropa para los niños</span>
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <h4>Kids</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                <h4>Niños</h4>
+                                                <p>Aquí encontraras la mejor ropa y los mejores accesorios para Niños
                                                 </p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="#">Descubrir más</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -92,16 +93,16 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <h4>Accessories</h4>
-                                            <span>Best Trend Accessories</span>
+                                            <h4>Accesorios</h4>
+                                            <span>Los mejores accesorios para ti</span>
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
-                                                <h4>Accessories</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
+                                                <h4>Accesorios</h4>
+                                                <p>Aquí encontraras los mejores accesorios para ti
                                                 </p>
                                                 <div class="main-border-button">
-                                                    <a href="#">Discover More</a>
+                                                    <a href="#">Descubrir más</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -117,14 +118,14 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-    <!-- ***** Men Area Starts ***** -->
+    <!-- ***** men Area Starts ***** -->
     <section class="section" id="men">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Men's Latest</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>Lo ultimo en Hombres</h2>
+                        <span>Aquí hay ropa que se acaba de agregar para los hombres</span>
                     </div>
                 </div>
             </div>
@@ -236,16 +237,16 @@
             </div>
         </div>
     </section>
-    <!-- ***** Men Area Ends ***** -->
+    <!-- ***** men Area Ends ***** -->
 
-    <!-- ***** Women Area Starts ***** -->
+    <!-- ***** women Area Starts ***** -->
     <section class="section" id="women">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Women's Latest</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>Lo ultimo en Mujeres</h2>
+                        <span>Aquí hay ropa que se acaba de agregar para las Mujeres</span>
                     </div>
                 </div>
             </div>
@@ -357,7 +358,7 @@
             </div>
         </div>
     </section>
-    <!-- ***** Women Area Ends ***** -->
+    <!-- ***** women Area Ends ***** -->
 
     <!-- ***** Kids Area Starts ***** -->
     <section class="section" id="kids">
@@ -365,8 +366,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Kid's Latest</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>Lo ultimo en Niños</h2>
+                        <span>Aquí hay ropa que se acaba de agregar para los Niños</span>
                     </div>
                 </div>
             </div>
@@ -480,7 +481,12 @@
     </section>
     <!-- ***** Kids Area Ends ***** -->
 
-    <!-- ***** Explore Area Starts ***** -->
+
+
+
+    {{-- Aún en duda de si esta sección debería estar aqui --}}
+
+    {{-- <!-- ***** Explore Area Starts ***** -->
     <section class="section" id="explore">
         <div class="container">
             <div class="row">
@@ -495,7 +501,7 @@
                             <p>You are not allowed to redistribute this template ZIP file on any other website.</p>
                         </div>
                         <p>There are 5 pages included in this HexaShop Template and we are providing it to you for
-                            absolutely free of charge at our TemplateMo website. There are web development costs for us.
+                            absolutely free of charge at our TemplateMo website. There are web developHombrest costs for us.
                         </p>
                         <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow"
                                 href="https://paypal.me/templatemo" target="_blank">support us</a> a little via
@@ -678,6 +684,6 @@
             </div>
         </div>
     </div>
-    <!-- ***** Subscribe Area Ends ***** -->
+    <!-- ***** Subscribe Area Ends ***** --> --}}
 
 @endsection
