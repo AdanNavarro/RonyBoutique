@@ -80,6 +80,8 @@
                             @csrf
                             <button class="px-6 py-2 text-red-800 bg-red-300">Remove All Cart</button>
                           </form>
+
+                          <a href="{{ route('cart.create.sale') }}"><button class="px-6 py-2 text-red-800 bg-green-300">Enviar</button></a>
                         </div>
 
 

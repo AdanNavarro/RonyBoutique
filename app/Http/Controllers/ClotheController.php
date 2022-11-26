@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Clothes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redirect;
 
 class ClotheController extends Controller
 {
@@ -16,9 +18,11 @@ class ClotheController extends Controller
      */
     public function index()
     {
-        $Clothes = DB::select('SELECT DISTINCT NAME,description,price FROM Clothes');
+        // $Clothes = DB::select('SELECT DISTINCT NAME,description,price FROM Clothes');
 
-        return response()->json($Clothes,200);
+        // return response()->json($Clothes,200);
+
+        // return view('public.catalogo');
     }
 
 
@@ -113,5 +117,49 @@ class ClotheController extends Controller
         $Clothes = Clothes::all()->where('name','=',$Name_P);
 
         return response()->json($Clothes,200);
+    }
+
+
+
+
+
+    //function web
+
+    public function viewCatalogo(){
+        // return view('public.catalogo');
+
+        $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $productos = json_decode($response->getBody());
+
+        return view('public.catalogo', compact('productos'));
+        
+    }
+
+    public function viewProducto($id){
+        // return view('public.catalogo');
+
+        $url = "http://apirony.000webhostapp.com/api/Size/" . $id; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $productos = json_decode($response->getBody());
+
+        $url = "http://apirony.000webhostapp.com/api/trademarks";
+
+        $response = Http::get($url);
+
+        $trademarks = json_decode($response->getBody());
+
+        $url = "http://apirony.000webhostapp.com/api/typeclothes";
+
+        $response = Http::get($url);
+
+        $typeclothes = json_decode($response->getBody());
+        
+        return view('public.producto', compact('productos', 'trademarks', 'typeclothes'));
+        
     }
 }
