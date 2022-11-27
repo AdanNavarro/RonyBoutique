@@ -13,7 +13,7 @@ class CartController extends Controller
     {
         $cartItems = \Cart::getContent();
         // dd($cartItems);
-        return view('carrito(prueba).cart', compact('cartItems'));
+        return view('public.carrito', compact('cartItems'));
     }
 
 
@@ -24,11 +24,23 @@ class CartController extends Controller
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
+            'attributes' => array(
+                'type_clothes_id' => $request->type_clothes_id,
+                'type_costumer_clothe' => $request->type_costumer_clothe,
+                'size' => $request->size,
+                'description' => $request->description,
+                'stock' => $request->stock,
+                'img' => $request->img,
+            ),
         ]);
 
-        session()->flash('success', 'Product is Added to Cart Successfully !');
+        session()->flash('success', 'El producto ha sido añadido correctamente');
+        // $cartItems = \Cart::getContent();
 
+        // dd($cartItems);
         return redirect()->route('cart.list');
+
+        // dd($request);
     }
 
     public function updateCart(Request $request)
@@ -43,7 +55,7 @@ class CartController extends Controller
             ]
         );
 
-        session()->flash('success', 'Item Cart is Updated Successfully !');
+        session()->flash('success', 'El producto se actualizó correctamente');
 
         return redirect()->route('cart.list');
     }
@@ -51,7 +63,7 @@ class CartController extends Controller
     public function removeCart(Request $request)
     {
         \Cart::remove($request->id);
-        session()->flash('success', 'Item Cart Remove Successfully !');
+        session()->flash('success', 'El producto se removió correctamente');
 
         return redirect()->route('cart.list');
     }
@@ -60,7 +72,7 @@ class CartController extends Controller
     {
         \Cart::clear();
 
-        session()->flash('success', 'All Item Cart Clear Successfully !');
+        session()->flash('success', 'Se vació el carrito satisfactoriamente');
 
         return redirect()->route('cart.list');
     }
@@ -80,11 +92,13 @@ class CartController extends Controller
 
         //     $cart->save();
         // }
+
+        
     }
 
     public function createSale()
     {
-        $url = "http://127.0.0.1:8000/api/createsale"; //con esto automaticamente crea la venta
+        $url = "http://apirony.000webhostapp.com/api/createsale"; //con esto automaticamente crea la venta
 
         $response = Http::get($url);
 
@@ -95,18 +109,18 @@ class CartController extends Controller
         $cartItems = \Cart::getContent();
         $array = $cartItems->toArray(); //obtenemos todos los productos con el array del carrito
 
-        $url = "http://127.0.0.1:8000/api/createdetailsale";
+        $url = "http://apirony.000webhostapp.com/api/createdetailsale";
 
         $subtotal_sale = 0;
 
-        foreach($array as $ar){ //aqui ya creamos todos los detailsale necesarios
+        foreach ($array as $ar) { //aqui ya creamos todos los detailsale necesarios
             $total_detailsale = $ar['quantity'] * $ar['price'];
 
             $response = Http::post(
                 $url,
                 [
                     'folio_sale' => $last_id_sale,
-                    'id_clothe' => /*$ar['id']*/ 2,
+                    'id_clothe' => $ar['id'],
                     'amount' => $ar['quantity'],
                     'price_u' => $ar['price'],
                     'total' => $total_detailsale,
@@ -117,7 +131,7 @@ class CartController extends Controller
         }
 
         //ahora con esto actualizamos los demas campos de la venta y quedaría listo
-        $url = "http://127.0.0.1:8000/api/updatesale/" . strval($last_id_sale) ;
+        $url = "http://apirony.000webhostapp.com/api/updatesale/" . strval($last_id_sale);
 
         $response = Http::post(
             $url,
@@ -129,7 +143,8 @@ class CartController extends Controller
 
         $respuesta = json_decode($response->getBody());
 
+        \Cart::clear();
+
         dd($respuesta);
-        
     }
 }

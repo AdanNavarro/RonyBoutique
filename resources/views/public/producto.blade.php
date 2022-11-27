@@ -58,36 +58,53 @@
                         <span>Categoría: {{ $productos[0]->type_costumer_clothe }}</span>
                         <br>
 
+                        <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
 
-                        <div class="form-floating">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option value="" selected disabled>Elige una opción</option>
-                                @foreach ($productos as $pro)
-                                    <option value="{{ $pro->size }}">{{ $pro->size }} - disponibles:
-                                        {{ $pro->stock }}</option>
-                                @endforeach
-                            </select>
-                            <label for="floatingSelect">Talla</label>
-                        </div>
-                        <br><br>
-{{-- 
-                        <div class="quantity-content">
-                            <div class="left-content">
-                                <h6>Cantidad</h6>
+                            <div class="form-floating">
+                                <select class="form-select" name="size" id="size" aria-label="Floating label select example" required>
+                                    <option value="" selected disabled>Elige una opción</option>
+                                    @foreach ($productos as $pro)
+                                        <option value="{{ $pro->size }}">{{ $pro->size }} - disponibles:
+                                            {{ $pro->stock }}</option>
+                                    @endforeach
+                                </select>
+                                <label for="size">Talla</label>
                             </div>
-                            <div class="right-content">
-                                <div class="quantity buttons_added">
-                                    <input type="button" value="-" class="minus">
-                                    <input type="number" step="1" min="1" max="" name="quantity"
-                                        value="1" title="Qty" class="input-text qty text" size="4"
-                                        pattern="" inputmode="">
-                                    <input type="button" value="+" class="plus">
+                            <br><br>
+
+                            <div class="total w-100 text-center">
+
+                                {{-- 'id' => $request->id,
+                                'type_clothes_id' => $request->type_clothes_id,
+                                'type_costumer_clothe' => $request->type_costumer_clothe,
+                                'name' => $request->name,
+                                'size' => $request->size,
+                                'description' => $request->description,
+                                'price' => $request->price,
+                                'stock' => $request->stock,
+                                'img' => $request->img,
+                                'quantity' => $request->quantity --}}
+
+                                <input type="hidden" name="id" value="{{ $productos[0]->id }}">
+                                <input type="hidden" name="type_clothes_id" value="{{ $productos[0]->type_clothes_id }}">
+                                <input type="hidden" name="type_costumer_clothe" value="{{ $productos[0]->type_costumer_clothe }}">
+                                <input type="hidden" name="name" value="{{ $productos[0]->name }}">
+                                {{-- <input type="hidden" name="size" valu$productos[0]="{{ $pro->size }}"> --}}
+                                <input type="hidden" name="description" value="{{ $productos[0]->description }}">
+                                <input type="hidden" name="price" value="{{ $productos[0]->price }}">
+                                <input type="hidden" name="stock" value="{{ $productos[0]->stock }}">
+                                <input type="hidden" name="img" value="{{ $productos[0]->img }}">
+                                <input type="hidden" name="quantity" value="1">
+
+
+                                <div class="main-border-button w-100 text-center">
+                                    <button class="btn btn-dark" type="submit">Añadir al carrito</button>
                                 </div>
+
                             </div>
-                        </div> --}}
-                        <div class="total w-100 text-center">
-                            <div class="main-border-button w-100 text-center"><a href="#">Añadir al carrito</a></div>
-                        </div>
+
+                        </form>
                     </div>
                 </div>
             </div>

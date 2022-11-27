@@ -26,7 +26,13 @@ Route::view('/sobre-nosotros', 'public/nosotros');
 Route::view('/contacto', 'public/contacto');
 Route::get('/catalogo/{id}', [ClotheController::class, 'viewProducto'])->name('catalogo.producto');
 Route::get('/catalogo', [ClotheController::class, 'viewCatalogo'])->name('catalogo.index');
-Route::view('/carrito', 'public.carrito');
+
+//carrito
+Route::get('/carrito', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('/carrito/cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('/carrito/update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('/carrito/remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('/carrito/clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
 //Vista privada
 Route::view('/tablero', 'private/dashboard')->name("tablero.dashboard");
