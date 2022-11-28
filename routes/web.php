@@ -73,7 +73,7 @@ Route::get('/crearventa', [CartController::class, 'createSale'])->name("cart.cre
 HACER RECONOCIMIENTOS LISTO
 
 2. confirmación de compra con otro archivo LISTo
-3. arreglar menú con dropmenu en categoría y cambiar imagenes e imagen de la pestaña y todo y ya que jalen el menú
+3. Sobre nosotros
 4. crud funcional
 5. Login funcional y que el carrito funcione con dicho usuario
 
