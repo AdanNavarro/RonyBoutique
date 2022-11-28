@@ -19,8 +19,22 @@ class CartController extends Controller
 
     public function addToCart(Request $request)
     {
+
+        $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $productos = json_decode($response->getBody());
+
+        foreach($productos as $pro){
+            if($pro->name == $request->name && $pro->size == $request->size){
+                $true_id = $pro->id;
+            }
+        }
+
+
         \Cart::add([
-            'id' => $request->id,
+            'id' => $true_id,
             'name' => $request->name,
             'price' => $request->price,
             'quantity' => $request->quantity,
@@ -45,19 +59,33 @@ class CartController extends Controller
 
     public function updateCart(Request $request)
     {
-        \Cart::update(
-            $request->id,
-            [
-                'quantity' => [
-                    'relative' => false,
-                    'value' => $request->quantity
-                ],
-            ]
-        );
 
-        session()->flash('success', 'El producto se actualizó correctamente');
+        $item = \Cart::get($request->id);
 
-        return redirect()->route('cart.list');
+        $producto = $item->toArray();
+
+        $stock_producto = $producto['attributes']['stock'];
+
+        if($request->quantity <= $stock_producto){
+            \Cart::update(
+                $request->id,
+                [
+                    'quantity' => [
+                        'relative' => false,
+                        'value' => $request->quantity
+                    ],
+                ]
+            );
+
+            session()->flash('success', 'El producto se actualizó correctamente');
+
+            return redirect()->route('cart.list');
+        }else{
+            session()->flash('success', 'El producto no se actualizó porque no hay suficiente en el inventario, prueba con un número menor');
+
+            return redirect()->route('cart.list');
+        }
+
     }
 
     public function removeCart(Request $request)
@@ -94,6 +122,12 @@ class CartController extends Controller
         // }
 
         
+    }
+
+    public function confirmSale(){
+        $productos = \Cart::getContent();
+        // dd($cartItems);
+        return view('public.confirmar', compact('productos'));
     }
 
     public function createSale()
@@ -145,6 +179,8 @@ class CartController extends Controller
 
         \Cart::clear();
 
-        dd($respuesta);
+        session()->flash('venta', 'activarmodal');
+
+        return redirect()->route('cart.list');
     }
 }

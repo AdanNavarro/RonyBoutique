@@ -134,7 +134,21 @@ class ClotheController extends Controller
 
         $productos = json_decode($response->getBody());
 
-        return view('public.catalogo', compact('productos'));
+        // dd( $productos);
+
+        $url = "http://apirony.000webhostapp.com/api/trademarks";
+
+        $response = Http::get($url);
+
+        $trademarks = json_decode($response->getBody());
+
+        $url = "http://apirony.000webhostapp.com/api/typeclothes";
+
+        $response = Http::get($url);
+
+        $typeclothes = json_decode($response->getBody());
+
+        return view('public.catalogo', compact('productos', 'trademarks', 'typeclothes'));
         
     }
 
@@ -161,5 +175,89 @@ class ClotheController extends Controller
         
         return view('public.producto', compact('productos', 'trademarks', 'typeclothes'));
         
+    }
+
+    public function filterType(Request $request){
+        // dd($request->filtro);
+
+        // $filtro = $request->filtro;
+
+        // dd($filtro);
+
+        // return redirect()->route('catalogo.index')->with("filtro", $filtro);
+
+        $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $productos = json_decode($response->getBody());
+
+        // dd( $productos);
+
+        $url = "http://apirony.000webhostapp.com/api/trademarks";
+
+        $response = Http::get($url);
+
+        $trademarks = json_decode($response->getBody());
+
+        $url = "http://apirony.000webhostapp.com/api/typeclothes";
+
+        $response = Http::get($url);
+
+        $typeclothes = json_decode($response->getBody());
+
+        $filtroType = $request->filtro;
+
+        return view('public.catalogo', compact('productos', 'trademarks', 'typeclothes', 'filtroType'));
+    }
+
+    public function filterTrademark(Request $request){
+        // dd($request->filtro);
+
+        // $filtro = $request->filtro;
+
+        // dd($filtro);
+
+        // return redirect()->route('catalogo.index')->with("filtro", $filtro);
+
+        $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $productos = json_decode($response->getBody());
+
+        // dd( $productos);
+
+        $url = "http://apirony.000webhostapp.com/api/trademarks";
+
+        $response = Http::get($url);
+
+        $trademarks = json_decode($response->getBody());
+
+        $url = "http://apirony.000webhostapp.com/api/typeclothes";
+
+        $response = Http::get($url);
+
+        $typeclothes = json_decode($response->getBody());
+
+        $filtroTrade = $request->filtro;
+
+        return view('public.catalogo', compact('productos', 'trademarks', 'typeclothes', 'filtroTrade'));
+    }
+
+    public function catalogo_hombre(){
+        return redirect()->route("catalogo.index", ['mostrar' => "Hombres"]);
+    }
+
+    public function catalogo_mujer(){
+        return redirect()->route("catalogo.index", ['mostrar' => "Mujeres"]);
+    }
+
+    public function catalogo_nino(){
+        return redirect()->route("catalogo.index", ['mostrar' => "Niños_y_Niñas"]);
+    }
+
+    public function catalogo_accesorio(){
+        return redirect()->route("catalogo.index", ['mostrar' => "Accesorios"]);
     }
 }

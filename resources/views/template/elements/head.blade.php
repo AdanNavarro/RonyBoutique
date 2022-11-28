@@ -18,6 +18,8 @@
 
 <link rel="stylesheet" href=" {{ asset('assets/css/lightbox.css') }} ">
 
+
+
 <style>
     .form-control:focus,
     .form-select:focus,

@@ -2,6 +2,8 @@
 
 @section('titulo_pestaña', 'Inicio')
 
+@section('inicio', 'active')
+
 @section('contenido')
 
     <!-- ***** Main Banner Area Start ***** -->
@@ -16,7 +18,7 @@
                                 </h4>
                                 <span>La mejor tienda de ropa que encontraras en Guadalajara</span>
                                 <div class="main-border-button">
-                                    <a href="#">¡Comprar ahora!</a>
+                                    <a href="{{ route('catalogo.index') }}">¡Comprar ahora!</a>
                                 </div>
                             </div>
                             <img src="{{ asset('assets/images/left-banner-image.jpg') }}">
