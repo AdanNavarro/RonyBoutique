@@ -7,6 +7,12 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 
+<link rel="apple-touch-icon" sizes="180x180" href=" {{ asset('assets/images/apple-touch-icon.png') }} ">
+<link rel="icon" type="image/png" sizes="32x32" href=" {{ asset('assets/images/favicon-32x32.png') }} ">
+<link rel="icon" type="image/png" sizes="16x16" href=" {{ asset('assets/images/favicon-16x16.png') }} ">
+<link rel="manifest" href=" {{ asset('assets/images/site.webmanifest') }} ">
+<link rel="mask-icon" href=" {{ asset('assets/images/safari-pinned-tab.svg') }} " color="#5bbad5">
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ClotheController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SalesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,8 +49,9 @@ Route::get('/carrito/confirmacion-compra', [CartController::class, 'confirmSale'
 Route::view('/tablero', 'private/dashboard')->name("tablero.dashboard");
 Route::get('/tablero/usuarios', [UserController::class, 'index'])->name("tablero.usuarios");
 Route::get('/tablero/boutique', [ClotheController::class, 'boutique_index'])->name("tablero.boutique");
-Route::view('/tablero/ventas', 'private/sales')->name("tablero.sales");
+Route::get('/tablero/ventas', [SalesController::class, 'index'])->name("tablero.sales");
 
+Route::get('/ventas', [SalesController::class, 'index'])->name("ventas.realizadas") ;
 
 Route::post('/subirimagen', [ClotheController::class, 'boutique_store'])->name("pruebita");
 
