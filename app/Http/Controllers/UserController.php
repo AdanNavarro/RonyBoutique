@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
@@ -14,7 +15,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $url = "http://apirony.000webhostapp.com/api/users"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $usuarios = json_decode($response->getBody());
+
+        return view('private.usuarios', compact('usuarios'));
     }
 
     /**

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class ClotheController extends Controller
 {
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -40,7 +40,7 @@ class ClotheController extends Controller
             'description' => $request->description,
         ]);
 
-        return response()->json(['Product'=>$Product,'mensaje'=>'Producto registrado'],201);
+        return response()->json(['Product' => $Product, 'mensaje' => 'Producto registrado'], 201);
     }
 
     /**
@@ -54,7 +54,6 @@ class ClotheController extends Controller
         $Product = Clothes::findOrFail($id);
 
         return response()->json([$Product]);
-
     }
 
     /**
@@ -65,7 +64,6 @@ class ClotheController extends Controller
      */
     public function edit(Request $request, $id)
     {
-
     }
 
     /**
@@ -85,8 +83,7 @@ class ClotheController extends Controller
 
         $Product = Clothes::findOrFail($id);
 
-        return response()->json(['Product'=>$Product,'mensaje'=>'Producto Actualizad\o'],201);
-
+        return response()->json(['Product' => $Product, 'mensaje' => 'Producto Actualizad\o'], 201);
     }
 
     /**
@@ -101,7 +98,7 @@ class ClotheController extends Controller
 
         $Product = Clothes::all();
 
-        return response()->json($Product,200);
+        return response()->json($Product, 200);
     }
 
 
@@ -109,14 +106,14 @@ class ClotheController extends Controller
     {
         $Clothes = Clothes::inRandomOrder()->limit($nClothes)->get();
 
-        return response()->json($Clothes,200);
+        return response()->json($Clothes, 200);
     }
 
     public function Search_Name($Name_P)
     {
-        $Clothes = Clothes::all()->where('name','=',$Name_P);
+        $Clothes = Clothes::all()->where('name', '=', $Name_P);
 
-        return response()->json($Clothes,200);
+        return response()->json($Clothes, 200);
     }
 
 
@@ -125,7 +122,8 @@ class ClotheController extends Controller
 
     //function web
 
-    public function viewCatalogo(){
+    public function viewCatalogo()
+    {
         // return view('public.catalogo');
 
         $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
@@ -149,10 +147,10 @@ class ClotheController extends Controller
         $typeclothes = json_decode($response->getBody());
 
         return view('public.catalogo', compact('productos', 'trademarks', 'typeclothes'));
-        
     }
 
-    public function viewProducto($id){
+    public function viewProducto($id)
+    {
         // return view('public.catalogo');
 
         $url = "http://apirony.000webhostapp.com/api/Size/" . $id; //con esto automaticamente crea la venta
@@ -172,12 +170,12 @@ class ClotheController extends Controller
         $response = Http::get($url);
 
         $typeclothes = json_decode($response->getBody());
-        
+
         return view('public.producto', compact('productos', 'trademarks', 'typeclothes'));
-        
     }
 
-    public function filterType(Request $request){
+    public function filterType(Request $request)
+    {
         // dd($request->filtro);
 
         // $filtro = $request->filtro;
@@ -211,7 +209,8 @@ class ClotheController extends Controller
         return view('public.catalogo', compact('productos', 'trademarks', 'typeclothes', 'filtroType'));
     }
 
-    public function filterTrademark(Request $request){
+    public function filterTrademark(Request $request)
+    {
         // dd($request->filtro);
 
         // $filtro = $request->filtro;
@@ -245,23 +244,28 @@ class ClotheController extends Controller
         return view('public.catalogo', compact('productos', 'trademarks', 'typeclothes', 'filtroTrade'));
     }
 
-    public function catalogo_hombre(){
+    public function catalogo_hombre()
+    {
         return redirect()->route("catalogo.index", ['mostrar' => "Hombres"]);
     }
 
-    public function catalogo_mujer(){
+    public function catalogo_mujer()
+    {
         return redirect()->route("catalogo.index", ['mostrar' => "Mujeres"]);
     }
 
-    public function catalogo_nino(){
+    public function catalogo_nino()
+    {
         return redirect()->route("catalogo.index", ['mostrar' => "Niños_y_Niñas"]);
     }
 
-    public function catalogo_accesorio(){
+    public function catalogo_accesorio()
+    {
         return redirect()->route("catalogo.index", ['mostrar' => "Accesorios"]);
     }
 
-    public function inicio(){
+    public function inicio()
+    {
         $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
 
         $response = Http::get($url);
@@ -286,7 +290,8 @@ class ClotheController extends Controller
     }
 
     //Para la vista privada
-    public function boutique_index(){
+    public function boutique_index()
+    {
         $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
 
         $response = Http::get($url);
@@ -310,19 +315,44 @@ class ClotheController extends Controller
         return view('private.boutique', compact('productos', 'trademarks', 'typeclothes'));
     }
 
-    public function boutique_store(Request $request){
-        $clothe = new Clothe();
+    public function boutique_store(Request $request)
+    {
+        $url = "http://apirony.000webhostapp.com/api/ClotheStore"; //con esto automaticamente crea la venta
 
-        $clothe->trademark_id = $request->trademark_id;
-        $clothe->type_clothes_id = $request->type_clothes_id;
-        $clothe->type_costumer_clothe = $request->type_costumer_clothe;
-        $clothe->name = $request->name;
-        $clothe->size = $request->size;
-        $clothe->description = $request->description;
-        $clothe->price = $request->price;
-        $clothe->stock = $request->stock;
-        $clothe->img = $request->img;
+        $img_url = $request->img->storeOnCloudinary('RonyBoutique');
 
-        $clothe->status = "active";
+        $response = Http::post(
+            $url,
+            [
+                'trademark_id' => $request->trademark_id,
+                'type_clothes_id' => $request->type_clothes_id,
+                'type_costumer_clothe' => $request->type_costumer_clothe,
+                'name' => $request->name,
+                'size1' => $request->size1,
+                'size2' => $request->size2,
+                'size3' => $request->size3,
+                'size4' => $request->size4,
+                'size5' => $request->size5,
+                'stock1' => $request->stock1,
+                'stock2' => $request->stock2,
+                'stock3' => $request->stock3,
+                'stock4' => $request->stock4,
+                'stock5' => $request->stock5,
+                'description' => $request->description,
+                'price' => $request->price,
+                'stock' => $request->stock,
+                'img' => $img_url->getPath(),
+            ]
+        );
+
+        $productos = json_decode($response->getBody());
+
+        session()->flash('message', "producto creado");
+
+        return redirect()->route("tablero.boutique");
+
+        // $result = $request->img->storeOnCloudinary('RonyBoutique');
+
+        // dd($result->getPath());
     }
 }

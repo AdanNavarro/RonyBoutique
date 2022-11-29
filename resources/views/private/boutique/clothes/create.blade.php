@@ -1,4 +1,4 @@
-<form action="" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+<form action="{{ route("pruebita") }}" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
     @csrf
 
     <input type="hidden" name="id">
@@ -6,7 +6,7 @@
     <div class="row g-3 mb-3">
         <div class="col-md-4">
             <label for="trademark_id" class="form-label">Marca</label>
-            <input class="form-control" type="text" name="trademark_id" id="trademark_id" required>
+            <input class="form-control" type="number" name="trademark_id" id="trademark_id" required>
             {{-- Esto sería un select --}}
             <div class="invalid-feedback">
                 Elije una Marca
@@ -18,7 +18,7 @@
 
         <div class="col-md-4">
             <label for="type_clothes_id" class="form-label">Tipo de Producto</label>
-            <input class="form-control" type="text" name="type_clothes_id" id="type_clothes_id" required>
+            <input class="form-control" type="number" name="type_clothes_id" id="type_clothes_id" required>
             {{-- Esto sería un select --}}
             <div class="invalid-feedback">
                 Elije un tipo de producto

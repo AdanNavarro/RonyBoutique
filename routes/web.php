@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ClotheController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,10 +46,12 @@ Route::get('/carrito/confirmacion-compra', [CartController::class, 'confirmSale'
 
 //Vista privada
 Route::view('/tablero', 'private/dashboard')->name("tablero.dashboard");
-Route::view('/tablero/usuarios', 'private/usuarios')->name("tablero.usuarios");
+Route::get('/tablero/usuarios', [UserController::class, 'index'])->name("tablero.usuarios");
 Route::get('/tablero/boutique', [ClotheController::class, 'boutique_index'])->name("tablero.boutique");
 Route::view('/tablero/ventas', 'private/sales')->name("tablero.sales");
 
+
+Route::post('/subirimagen', [ClotheController::class, 'boutique_store'])->name("pruebita");
 
 
 

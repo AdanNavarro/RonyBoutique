@@ -21,75 +21,36 @@
             </th>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Nombre {{-- name --}}
-                </td>
-                <td>
-                    Correo Electrónico {{-- email --}}
-                </td>
-                <td>
-                    Número de Teléfono {{-- number_phone --}}
-                </td>
-                <td>
-                    RFC {{-- RFC --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Dar de Baja</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Nombre {{-- name --}}
-                </td>
-                <td>
-                    Correo Electrónico {{-- email --}}
-                </td>
-                <td>
-                    Número de Teléfono {{-- number_phone --}}
-                </td>
-                <td>
-                    RFC {{-- RFC --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Dar de Baja</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    3
-                </td>
-                <td>
-                    Nombre {{-- name --}}
-                </td>
-                <td>
-                    Correo Electrónico {{-- email --}}
-                </td>
-                <td>
-                    Número de Teléfono {{-- number_phone --}}
-                </td>
-                <td>
-                    RFC {{-- RFC --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Dar de Baja</a>
-                </td>
-            </tr>
+            @foreach ($usuarios->users as $user)
+                @foreach ($usuarios->workers as $worker)
+                    @if ($worker->user_id == $user->id)
+                        <tr>
+                            <td>
+                                {{ $user->id }}
+                            </td>
+                            <td>
+                                {{ $user->name }} {{-- name --}}
+                            </td>
+                            <td>
+                                {{ $user->email }} {{-- email --}}
+                            </td>
+                            <td>
+                                {{ $worker->number_phone }}{{-- number_phone --}}
+                            </td>
+                            <td>
+                                {{ $worker->RFC }} {{-- RFC --}}
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-dark" href="#" role="button">Dar de Baja</a>
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
+            @endforeach
+
         </tbody>
     </table>
 </div>

@@ -15,57 +15,32 @@
             </th>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Nombre de Usuario {{-- username --}}
-                </td>
-                <td>
-                    Correo Electrónico {{-- email --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Dar de Baja</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Nombre de Usuario {{-- username --}}
-                </td>
-                <td>
-                    Correo Electrónico {{-- email --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Dar de Baja</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    3
-                </td>
-                <td>
-                    Nombre de Usuario {{-- username --}}
-                </td>
-                <td>
-                    Correo Electrónico {{-- email --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Dar de Baja</a>
-                </td>
-            </tr>
+
+            @foreach ($usuarios->users as $user)
+                @foreach ($usuarios->clients as $client)
+                    @if ($client->user_id == $user->id)
+                        <tr>
+                            <td>
+                                {{ $user->id }}
+                            </td>
+                            <td>
+                                {{ $client->username }} {{-- username --}}
+                            </td>
+                            <td>
+                                {{ $user->email }} {{-- email --}}
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-outline-dark" href="#" role="button">Dar de Baja</a>
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
+            @endforeach
+
+
         </tbody>
     </table>
 </div>
