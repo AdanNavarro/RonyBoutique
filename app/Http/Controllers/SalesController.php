@@ -92,4 +92,14 @@ class SalesController extends Controller
     {
         //
     }
+
+    public function ventascliente(){
+        $url = "http://apirony.000webhostapp.com/api/ventascliente"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $ventas = json_decode($response->getBody());
+
+        return view('public.miusuario', compact('ventas'));
+    }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ClotheController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\UserController;
@@ -22,8 +23,28 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/sdsdsdfdsf', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboardsddsdsds', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 //Vista publica
 Route::get('/', [ClotheController::class, 'inicio'])->name('inicio');
+Route::post('/', [ClotheController::class, 'inicio'])->name('inicio');
+
+Route::get('/mispedidos', [SalesController::class, 'ventascliente'])->name("miusuario");
+
+Route::get('/sesioncerrada', [ClotheController::class, 'inicioempleado'])->name("inicioempleado");
+Route::view('/iniciosesion', "public/loginempleado")->name('loginempleado');
+
+Route::view('/iniciarsesion', "public/login")->name('login');
+Route::post('/login', [LoginController::class, 'cliente'])->name('logincontrolador');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logoutpost');
 Route::view('/sobre-nosotros', 'public/nosotros')->name('sobre.nosotros');
 Route::view('/contacto', 'public/contacto')->name('contacto');
 Route::get('/catalogo/{id}', [ClotheController::class, 'viewProducto'])->name('catalogo.producto');

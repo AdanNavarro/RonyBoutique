@@ -246,25 +246,25 @@ class ClotheController extends Controller
 
     public function catalogo_hombre()
     {
-        return redirect()->route("catalogo.index", ['mostrar' => "Hombres"]);
+        return redirect()->route("catalogo.index");
     }
 
     public function catalogo_mujer()
     {
-        return redirect()->route("catalogo.index", ['mostrar' => "Mujeres"]);
+        return redirect()->route("catalogo.index");
     }
 
     public function catalogo_nino()
     {
-        return redirect()->route("catalogo.index", ['mostrar' => "Niños_y_Niñas"]);
+        return redirect()->route("catalogo.index");
     }
 
     public function catalogo_accesorio()
     {
-        return redirect()->route("catalogo.index", ['mostrar' => "Accesorios"]);
+        return redirect()->route("catalogo.index");
     }
 
-    public function inicio()
+    public function inicio(Request $request)
     {
         $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
 
@@ -286,7 +286,41 @@ class ClotheController extends Controller
 
         $typeclothes = json_decode($response->getBody());
 
-        return view('public.inicio', compact('productos', 'trademarks', 'typeclothes'));
+        if($request->inicio == "inicio"){
+            return view('public.inicio', compact('productos', 'trademarks', 'typeclothes'));
+        }else{
+            return view('public.iniciootro', compact('productos', 'trademarks', 'typeclothes'));
+        }
+
+        
+    }
+
+    public function inicioempleado(Request $request)
+    {
+        $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $productos = json_decode($response->getBody());
+
+        // dd( $productos);
+
+        $url = "http://apirony.000webhostapp.com/api/trademarks";
+
+        $response = Http::get($url);
+
+        $trademarks = json_decode($response->getBody());
+
+        $url = "http://apirony.000webhostapp.com/api/typeclothes";
+
+        $response = Http::get($url);
+
+        $typeclothes = json_decode($response->getBody());
+
+        return view('public.inicioempleado', compact('productos', 'trademarks', 'typeclothes'));
+      
+
+        
     }
 
     //Para la vista privada
