@@ -11,11 +11,11 @@
             $catalogo_Filtro = $_GET['mostrar'];
         
             switch ($catalogo_Filtro) {
-                case 'Hombres':
+                case 'Hombre':
                     $imagen = 'assets/images/catalogo_hombre.jpg';
                     break;
         
-                case 'Mujeres':
+                case 'Mujer':
                     $imagen = 'assets/images/catalogo_mujer.jpg';
                     break;
         
@@ -23,7 +23,7 @@
                     $imagen = 'assets/images/catalogo_nino.jpg';
                     break;
         
-                case 'Accesorios':
+                case 'Accesorio':
                     $imagen = 'assets/images/catalogo_accesorio.jpg';
                     break;
             }

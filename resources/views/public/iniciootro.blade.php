@@ -226,7 +226,7 @@
 
                             @foreach ($productos as $pro)
                                 @if ($pro->name != $aux)
-                                    @if ($pro->type_costumer_clothe == 'Hombres' || $pro->type_costumer_clothe == 'Unisex')
+                                    @if ($pro->type_costumer_clothe == 'Hombre' || $pro->type_costumer_clothe == 'Unisex')
                                         <div class="item p-2 card shadow-sm">
                                             <div class="thumb">
                                                 <div class="hover-content">
@@ -287,7 +287,7 @@
 
                             @foreach ($productos as $pro)
                                 @if ($pro->name != $aux)
-                                    @if ($pro->type_costumer_clothe == 'Mujeres' || $pro->type_costumer_clothe == 'Unisex')
+                                    @if ($pro->type_costumer_clothe == 'Mujer' || $pro->type_costumer_clothe == 'Unisex')
                                         <div class="item p-2 card shadow-sm">
                                             <div class="thumb">
                                                 <div class="hover-content">

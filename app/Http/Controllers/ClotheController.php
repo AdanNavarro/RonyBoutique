@@ -246,12 +246,12 @@ class ClotheController extends Controller
 
     public function catalogo_hombre()
     {
-        return redirect()->route("catalogo.index", ['mostrar' => "Hombres"]);
+        return redirect()->route("catalogo.index", ['mostrar' => "Hombre"]);
     }
 
     public function catalogo_mujer()
     {
-        return redirect()->route("catalogo.index", ['mostrar' => "Mujeres"]);
+        return redirect()->route("catalogo.index", ['mostrar' => "Mujer"]);
     }
 
     public function catalogo_nino()
@@ -261,7 +261,7 @@ class ClotheController extends Controller
 
     public function catalogo_accesorio()
     {
-        return redirect()->route("catalogo.index", ['mostrar' => "Accesorios"]);
+        return redirect()->route("catalogo.index", ['mostrar' => "Accesorio"]);
     }
 
     public function inicio(Request $request)
