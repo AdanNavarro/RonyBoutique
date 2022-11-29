@@ -43,7 +43,7 @@
                 Ganancias: ${{ $ganancias }}
             </h5>
             <p class="card-text">Ventas realizadas durante todo el año</p>
-            <a href="#" class="btn btn-dark">Ver mas</a>
+            
         </div>
     </div>
 
@@ -70,7 +70,7 @@
                         Ganancias: ${{ $ganancias }}
                     </h5>
                     <p class="card-text">Ventas realizadas el día de hoy</p>
-                    <a href="#" class="btn btn-dark">Ver mas</a>
+                    
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@
                         Ganancias: ${{ $ganancias }}
                     </h5>
                     <p class="card-text">Ventas realizadas durante esta semana</p>
-                    <a href="#" class="btn btn-dark">Ver mas</a>
+                    
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@
                         Ganancias: ${{ $ganancias }}
                     </h5>
                     <p class="card-text">Ventas realizadas durante este mes</p>
-                    <a href="#" class="btn btn-dark">Ver mas</a>
+                    
                 </div>
             </div>
         </div>
@@ -151,7 +151,7 @@
                         Ganancias: ${{ $ganancias }}
                     </h5>
                     <p class="card-text">Ventas realizadas durante este año</p>
-                    <a href="#" class="btn btn-dark">Ver mas</a>
+                    
                 </div>
             </div>
         </div>
