@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 //Vista publica
-Route::view('/', 'public/inicio')->name('inicio');
+Route::get('/', [ClotheController::class, 'inicio'])->name('inicio');
 Route::view('/sobre-nosotros', 'public/nosotros')->name('sobre.nosotros');
 Route::view('/contacto', 'public/contacto')->name('contacto');
 Route::get('/catalogo/{id}', [ClotheController::class, 'viewProducto'])->name('catalogo.producto');

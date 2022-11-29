@@ -260,4 +260,28 @@ class ClotheController extends Controller
     public function catalogo_accesorio(){
         return redirect()->route("catalogo.index", ['mostrar' => "Accesorios"]);
     }
+
+    public function inicio(){
+        $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $productos = json_decode($response->getBody());
+
+        // dd( $productos);
+
+        $url = "http://apirony.000webhostapp.com/api/trademarks";
+
+        $response = Http::get($url);
+
+        $trademarks = json_decode($response->getBody());
+
+        $url = "http://apirony.000webhostapp.com/api/typeclothes";
+
+        $response = Http::get($url);
+
+        $typeclothes = json_decode($response->getBody());
+
+        return view('public.inicio', compact('productos', 'trademarks', 'typeclothes'));
+    }
 }
