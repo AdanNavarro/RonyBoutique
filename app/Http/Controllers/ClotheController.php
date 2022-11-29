@@ -323,6 +323,6 @@ class ClotheController extends Controller
         $clothe->stock = $request->stock;
         $clothe->img = $request->img;
 
-        $clothe->img = "active";
+        $clothe->status = "active";
     }
 }
