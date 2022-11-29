@@ -10,63 +10,36 @@
             <th>
                 Descripción del producto {{-- description --}}
             </th>
-            
+
             <th colspan="2">
                 Acciones
             </th>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Tipo de Producto {{-- type --}}
-                </td>
-                <td>
-                    Descripción del producto {{-- description --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Eliminar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Tipo de Producto {{-- type --}}
-                </td>
-                <td>
-                    Descripción del producto {{-- description --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Eliminar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    3
-                </td>
-                <td>
-                    Tipo de Producto {{-- type --}}
-                </td>
-                <td>
-                    Descripción del producto {{-- description --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Eliminar</a>
-                </td>
-            </tr>
+
+
+            @foreach ($typeclothes as $type)
+                <tr>
+                    <td>
+                        {{ $type->id }}
+                    </td>
+                    <td>
+                        {{ $type->type }} {{-- type --}}
+                    </td>
+                    <td>
+                        {{ $type->description }} {{-- description --}}
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-dark" href="#" role="button">Eliminar</a>
+                    </td>
+                </tr>
+            @endforeach
+
+
+
         </tbody>
     </table>
 </div>

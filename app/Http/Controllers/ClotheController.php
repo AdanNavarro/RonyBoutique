@@ -284,4 +284,45 @@ class ClotheController extends Controller
 
         return view('public.inicio', compact('productos', 'trademarks', 'typeclothes'));
     }
+
+    //Para la vista privada
+    public function boutique_index(){
+        $url = "http://apirony.000webhostapp.com/api/GetAllClothes"; //con esto automaticamente crea la venta
+
+        $response = Http::get($url);
+
+        $productos = json_decode($response->getBody());
+
+        // dd( $productos);
+
+        $url = "http://apirony.000webhostapp.com/api/trademarks";
+
+        $response = Http::get($url);
+
+        $trademarks = json_decode($response->getBody());
+
+        $url = "http://apirony.000webhostapp.com/api/typeclothes";
+
+        $response = Http::get($url);
+
+        $typeclothes = json_decode($response->getBody());
+
+        return view('private.boutique', compact('productos', 'trademarks', 'typeclothes'));
+    }
+
+    public function boutique_store(Request $request){
+        $clothe = new Clothe();
+
+        $clothe->trademark_id = $request->trademark_id;
+        $clothe->type_clothes_id = $request->type_clothes_id;
+        $clothe->type_costumer_clothe = $request->type_costumer_clothe;
+        $clothe->name = $request->name;
+        $clothe->size = $request->size;
+        $clothe->description = $request->description;
+        $clothe->price = $request->price;
+        $clothe->stock = $request->stock;
+        $clothe->img = $request->img;
+
+        $clothe->img = "active";
+    }
 }

@@ -1,5 +1,5 @@
-<div class="table-responsive">
-    <table class="table table-hover ">
+<div class="table-responsive" style="max-height: 500px">
+    <table class="table table-hover " >
         <thead class="">
             <th>
                 #
@@ -28,117 +28,60 @@
             <th>
                 Cantidad {{-- stock --}}
             </th>
-            
+
             <th colspan="2">
                 Acciones
             </th>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    1
-                </td>
-                <td>
-                    Marca {{-- trademark_id -> name --}}
-                </td>
-                <td>
-                    Tipo de producto {{-- type_clothes_id -> type --}}
-                </td>
-                <td>
-                    Producto para {{-- type_costumer_clothe --}}
-                </td>
-                <td>
-                    Nombre {{-- name --}}
-                </td>
-                <td>
-                    Descripción {{-- description --}}
-                </td>
-                <td>
-                    Imagen {{-- img --}}
-                </td>
-                <td>
-                    Talla {{-- size --}}
-                </td>
-                <td>
-                    Cantidad {{-- stock --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Eliminar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    2
-                </td>
-                <td>
-                    Marca {{-- trademark_id -> name --}}
-                </td>
-                <td>
-                    Tipo de producto {{-- type_clothes_id -> type --}}
-                </td>
-                <td>
-                    Producto para {{-- type_costumer_clothe --}}
-                </td>
-                <td>
-                    Nombre {{-- name --}}
-                </td>
-                <td>
-                    Descripción {{-- description --}}
-                </td>
-                <td>
-                    Imagen {{-- img --}}
-                </td>
-                <td>
-                    Talla {{-- size --}}
-                </td>
-                <td>
-                    Cantidad {{-- stock --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Eliminar</a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    3
-                </td>
-                <td>
-                    Marca {{-- trademark_id -> name --}}
-                </td>
-                <td>
-                    Tipo de producto {{-- type_clothes_id -> type --}}
-                </td>
-                <td>
-                    Producto para {{-- type_costumer_clothe --}}
-                </td>
-                <td>
-                    Nombre {{-- name --}}
-                </td>
-                <td>
-                    Descripción {{-- description --}}
-                </td>
-                <td>
-                    Imagen {{-- img --}}
-                </td>
-                <td>
-                    Talla {{-- size --}}
-                </td>
-                <td>
-                    Cantidad {{-- stock --}}
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-dark" href="#" role="button">Eliminar</a>
-                </td>
-            </tr>
+
+
+            @foreach ($productos as $pro)
+                <tr>
+                    <td>
+                        {{ $pro->id }}
+                    </td>
+                    <td>
+                        @foreach ($trademarks as $trade)
+                            @if ($trade->id == $pro->trademark_id)
+                                {{ $trade->name }}
+                            @endif
+                        @endforeach {{-- trademark_id -> name --}}
+                    </td>
+                    <td>
+                        @foreach ($typeclothes as $type)
+                            @if ($type->id == $pro->type_clothes_id)
+                                {{ $type->type }}
+                            @endif
+                        @endforeach {{-- trademark_id -> name --}}
+                    </td>
+                    <td>
+                        {{ $pro->type_costumer_clothe }} {{-- type_costumer_clothe --}}
+                    </td>
+                    <td>
+                        {{ $pro->name }} {{-- name --}}
+                    </td>
+                    <td>
+                        {{ $pro->description }} {{-- description --}}
+                    </td>
+                    <td>
+                        <img style="max-width: 100px" src="{{ $pro->img }}" alt=""> {{-- img --}}
+                    </td>
+                    <td>
+                        {{ $pro->size }} {{-- size --}}
+                    </td>
+                    <td>
+                        {{ $pro->stock }} {{-- stock --}}
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-dark" href="#" role="button">Editar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-dark" href="#" role="button">Eliminar</a>
+                    </td>
+                </tr>
+            @endforeach
+
         </tbody>
     </table>
 </div>

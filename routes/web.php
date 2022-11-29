@@ -46,7 +46,7 @@ Route::get('/carrito/confirmacion-compra', [CartController::class, 'confirmSale'
 //Vista privada
 Route::view('/tablero', 'private/dashboard')->name("tablero.dashboard");
 Route::view('/tablero/usuarios', 'private/usuarios')->name("tablero.usuarios");
-Route::view('/tablero/boutique', 'private/boutique')->name("tablero.boutique");
+Route::get('/tablero/boutique', [ClotheController::class, 'boutique_index'])->name("tablero.boutique");
 Route::view('/tablero/ventas', 'private/sales')->name("tablero.sales");
 
 

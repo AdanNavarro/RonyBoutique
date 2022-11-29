@@ -46,6 +46,8 @@
         <div class="tab-pane fade show active" id="producto" role="tabpanel" aria-labelledby="producto-tab">
             @include('private/boutique/clothes/data')
 
+            <br>
+
             <div class="text-center">
                 <a class="btn btn-outline-dark my-2 mx-auto" data-bs-toggle="collapse" href="#form_clients" role="button"
                     aria-expanded="false" aria-controls="form_clients">

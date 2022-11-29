@@ -273,6 +273,7 @@
     .btn-outline-dark {
         color: #000 !important;
         border-color: #000 !important;
+        background-color: #FFF;
     }
 
     .btn-outline-dark:hover {
